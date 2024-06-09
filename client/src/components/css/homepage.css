@@ -1,0 +1,91 @@
+.container {
+    display: grid;
+  }
+  
+  
+  
+  .content {
+    padding: 80px 100px;
+    z-index: 1;
+    width: 80%;
+  }
+  
+  
+  .div-img{
+    display: grid;
+  }
+  
+  .div-img img{
+    width: 70%;
+  }
+  
+  .content h1 {
+  font-size: 70px;
+  color: #394045;
+  
+  }
+  
+  .content p {
+    margin: 10px 0 30px;
+    color: #394045;
+    font-size: 30px;
+    animation-delay: 0.5s;
+  }
+  
+  .content .pgr-btn {
+    padding: 15px 80px;
+    font-size: 20px;
+    animation-delay: 1s;
+  }
+  
+  .pgr-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-color:#7335827c;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    border-radius: 30px;
+  border-top-right-radius: 0; 
+  transition: 0.5s;
+  }
+  
+  .pgr-btn:hover {
+    border-top-right-radius: 30px;
+  }
+  
+  .feature-img.anim {
+    animation-delay: 1.5s;
+  }
+  
+  .anim {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+  }
+  
+  @keyframes moveup {
+    100%{
+      opacity: 1;
+      transform: translateY(0px);
+  
+    }
+  }
+  
+  @media only screen and (max-width: 1100px) {
+    .div-img{
+      display: none;
+    }
+    
+  }
+  
+  @media only screen and (max-width: 800px){
+    .container{
+      display: block;
+    }
+    .content{
+      width: 100%;
+      padding: 10vh 5vh;
+    }
+  }

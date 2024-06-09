@@ -1,0 +1,115 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	
+}
+
+header{
+	width: 100%;
+}
+
+nav {
+	background-color: #394045;
+	padding: 16px 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+	
+}
+
+.link{
+	display: inline-block;
+}
+
+@media only screen and (max-width: 1360px) {
+	nav {
+		flex-direction: column;
+		padding: 3vh 0;
+	}
+
+	.logo{
+		padding-bottom: 3vh;
+	}
+}
+
+@media only screen and (max-width: 755px){
+	nav{
+		padding: 3vh;
+	}
+}
+
+@media only screen and (max-width: 540px){
+	.logo{
+		padding-bottom: 6vh;
+	}
+}
+
+.logo {
+	font-size: 32px;
+	color: #ffffff;
+	font-weight: bold;
+}
+ul {
+	list-style: none;
+}
+
+ul li {
+	display: inline;
+	margin-right: 20px;
+}
+
+ul li a {
+	text-decoration: none;
+	color: #ffffff;
+	font-size: 20px;
+}
+
+ul li a i{
+	margin-right: 5px;
+	color: #f78898;
+}
+
+ul li a i:hover{
+	margin-right: 5px;
+	color: #693484;
+}
+
+
+
+
+
+
+.logo-collor {
+	position: relative;
+	color: #52616d;
+	text-transform: uppercase;
+	-webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+	line-height: 0.70em;
+	outline: none;
+	animation: animate 20s linear infinite;
+}
+
+@keyframes animate 
+{ 35%              
+	{
+	color: #f78898;
+	text-shadow: none;
+}
+ 80%
+	{
+	color: #fff;
+	text-shadow: 0 0 1px #fff,
+	0 0 1px #fff,
+	0 0 5px #fff,
+	0 0 5px #fff,
+	0 0 1px #fff;
+
+
+}
+}
+
+.logged-name{
+	color: red;
+}
