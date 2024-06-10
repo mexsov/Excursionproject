@@ -22,3 +22,12 @@ CREATE TABLE excursion_dates (
     create_excursion_id INT REFERENCES create_excursions(id) ON DELETE CASCADE,
     excursion_date DATE NOT NULL
 );
+
+CREATE TABLE project_workers(
+    id SERIAL PRIMARY KEY,
+    user_id INT NOT NULL,
+    create_excursions_id INT NOT NULL,
+--  role ROLE NOT NULL DEFAULT 'user';
+    CONSTRAINT fk_users FOREIGN KEY(user_id) REFERENCES users(id),
+    CONSTRAINT fk_create_excursions FOREIGN KEY(create_excursions_id) REFERENCES create_excursions(id)
+);
