@@ -1,0 +1,35 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon server.mjs",
+    "prod": "cross-env NODE_ENV=production nodemon server.mjs",
+    "build:dev": "cross-env NODE_ENV=development node esbuild.mjs",
+    "build:prod": "cross-env NODE_ENV=production node esbuild.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "pg": "^8.11.3",
+    "uniqid": "^5.4.0",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.2",
+    "nodemon": "^3.1.0"
+  }
+}

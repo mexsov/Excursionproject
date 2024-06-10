@@ -1,0 +1,1 @@
+export const SERVER_SIDE_ERROR = "Server side error";
