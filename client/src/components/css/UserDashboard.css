@@ -1,0 +1,25 @@
+.table-project{
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    backdrop-filter: blur(15px);
+    background-color: #7335827c;
+    border: 2px solid #76b3e24b ;
+    border-radius: 10px;
+    color: white;
+    padding: 40px;
+    background: url(../../assets/Background7.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.app-table{
+    background: url(../../assets/Background7.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}
+
+
+.table-link{
+    color: white;
+    font-weight: 400;
+}
