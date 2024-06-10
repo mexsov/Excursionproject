@@ -20,9 +20,9 @@ const projectWorkersController = {
     },
     getPWorkerByUserAndProjectId: async (req, res, next) => {
         try {
-            const { user_id, project_id } = req.params;
+            const { user_id, create_excursions_id } = req.params;
 
-            const result = await project_workersModel.getProjectWorker(user_id, project_id);
+            const result = await project_workersModel.getProjectWorker(user_id, create_excursions_id);
 
             return res.status(200).json(result);
         }
@@ -32,7 +32,7 @@ const projectWorkersController = {
     },
     getPWorkersByProjectId: async (req, res, next) => {
         try {
-            const id = req.params.project_id;
+            const id = req.params.create_excursions_id;
 
             const result = await project_workersModel.getProjectWorkersByProjectId(id);
 
@@ -46,13 +46,13 @@ const projectWorkersController = {
     createPWorker: async (req, res, next) => {
         try {
 
-            const { username, project_id } = req.body;
+            const { username, create_excursions_id } = req.body;
 
             if (!req.user) {
                 return res.status(401).json("Unauthorized access");
             }
 
-            const currWorker = await project_workersModel.getProjectWorker(req.user.id, project_id);
+            const currWorker = await project_workersModel.getProjectWorker(req.user.id, create_excursions_id);
 
             if (!currWorker) {
                 return res.status(401).json("You dont have privileges to perform this action");
@@ -71,7 +71,7 @@ const projectWorkersController = {
 
             const { id: user_id } = await userModel.getUserByUsername(username);
 
-            const ifExists = await project_workersModel.getProjectWorker(user_id, project_id);
+            const ifExists = await project_workersModel.getProjectWorker(user_id, create_excursions_id);
             if (ifExists) {
                 return res.status(400).json({
                     errors: [{
@@ -82,7 +82,7 @@ const projectWorkersController = {
             }
 
             const pWorker = {
-                role: USER, user_id, project_id
+                role: USER, user_id, create_excursions_id
             };
 
             const result = await project_workersModel.createProjectWorker(pWorker);
@@ -98,14 +98,14 @@ const projectWorkersController = {
     updatePWorker: async (req, res, next) => {
         try {
 
-            const { role, user_id, project_id } = req.body;
+            const { role, user_id, create_excursions_id } = req.body;
 
             if (!req.user) {
                 return res.status(401).json("Unauthorized access");
             }
 
-            const currentUserRole = await project_workersModel.getProjectWorker(req.user.id, project_id);
-            const otherUserRole = await project_workersModel.getProjectWorker(user_id, project_id);
+            const currentUserRole = await project_workersModel.getProjectWorker(req.user.id, create_excursions_id);
+            const otherUserRole = await project_workersModel.getProjectWorker(user_id, create_excursions_id);
 
             if (!currentUserRole) {
                 return res.status(401).json("You dont have privileges to perform this action");
@@ -132,7 +132,7 @@ const projectWorkersController = {
             }
 
             const pWorker = {
-                role, user_id, project_id
+                role, user_id, create_excursions_id
             };
 
             const result = await project_workersModel.updateProjectWorkerRole(pWorker);
@@ -147,14 +147,14 @@ const projectWorkersController = {
 
     deletePWorker: async (req, res, next) => {
         try {
-            const { user_id, project_id } = req.body;
+            const { user_id, create_excursions_id } = req.body;
 
             if (!req.user) {
                 return res.status(401).json("Unauthorized access");
             }
 
-            const currentUserRole = await project_workersModel.getProjectWorker(req.user.id, project_id);
-            const otherUserRole = await project_workersModel.getProjectWorker(user_id, project_id);
+            const currentUserRole = await project_workersModel.getProjectWorker(req.user.id, create_excursions_id);
+            const otherUserRole = await project_workersModel.getProjectWorker(user_id, create_excursions_id);
 
             if (!currentUserRole) {
                 return res.status(401).json("You dont have privileges to perform this action");
@@ -180,7 +180,7 @@ const projectWorkersController = {
                 return res.status(400).json({ errors: errors.array() });
             }
 
-            await project_workersModel.deleteProjectWorker(user_id, project_id);
+            await project_workersModel.deleteProjectWorker(user_id, create_excursions_id);
 
             return res.status(200).json();
 

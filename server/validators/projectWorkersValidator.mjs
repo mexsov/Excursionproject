@@ -21,10 +21,10 @@ export const updatePWorkerValidationSchema = checkSchema({
             errorMessage: "user_id must be a valid positive integer"
         }
     },
-    project_id: {
+    create_excursions_id: {
         isInt: {
             options: { min: 1 },
-            errorMessage: "project_id must be a valid positive integer"
+            errorMessage: "create_excursions_id must be a valid positive integer"
         }
     }
 });
@@ -50,10 +50,10 @@ export const createPWorkerValidationSchema = checkSchema({
             },
         }
     },
-    project_id: {
+    create_excursions_id: {
         isInt: {
             options: { min: 1 },
-            errorMessage: "project_id must be a valid positive integer"
+            errorMessage: "create_excursions_id must be a valid positive integer"
         }
     }
 });
@@ -65,10 +65,10 @@ export const deletePWorkerValidationSchema = checkSchema({
             errorMessage: "user_id must be a valid positive integer"
         }
     },
-    project_id: {
+    create_excursions_id: {
         isInt: {
             options: { min: 1 },
-            errorMessage: "project_id must be a valid positive integer"
+            errorMessage: "create_excursions_id must be a valid positive integer"
         }
     }
 });
