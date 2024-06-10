@@ -30,4 +30,4 @@ CREATE TABLE project_workers(
 --  role ROLE NOT NULL DEFAULT 'user';
     CONSTRAINT fk_users FOREIGN KEY(user_id) REFERENCES users(id),
     CONSTRAINT fk_create_excursions FOREIGN KEY(create_excursions_id) REFERENCES create_excursions(id)
-);
+); 
