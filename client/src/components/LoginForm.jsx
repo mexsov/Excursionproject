@@ -34,7 +34,7 @@ function LoginForm() {
       const result = await loginUser(data);
       // jeigu gauname result ir result turi tokeną, tai nukreipiame vartotoją į dashboard puslapį arba admin-dashboard puslapį
       if (result && result.token) {
-        navigate('/dashboard');
+        navigate('/');
       }
     } catch (error) {
       if (error.response && error.response.status === 400) {
