@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Home } from './components/Homepage';
 import  RegisterForm  from './components/RegisterForm';
 import LoginForm from './components/LoginForm';
+import ToursPage from './components/ToursPage';
+import ParticipantsPage from './components/ParticipantsPage';
 
 
 function App() {
@@ -21,7 +23,8 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
 
         <Route path="/signup" element={<RegisterForm />} />
-
+        <Route path="/tourspage" element={<ToursPage />} />
+        <Route path="/ParticipantsPage" element={<ParticipantsPage />} />
         </Routes>
       </Router>
     </>
