@@ -3,6 +3,7 @@ import { useContext, useEffect, useRef } from "react";
 import { Link } from 'react-router-dom'
 import './css/homepage.css';
 import img1 from "../assets/visiter-vilnius-incontournables.jpg";
+import { Card } from "./card";
 
 export const Home = () => {
     const { user } = useContext(AuthContext);
@@ -19,9 +20,9 @@ export const Home = () => {
                 <div className="div-img">
                     <img src={img1} alt="city" className="feature-img anim" />
                 </div>
-                <div className="main_page_card">
-                    <li>Excursion for solo travellers</li>
-                <li>Excursion for group travellers</li>
+                <div className="main_page_card_container">
+                    <p>asdasd</p>
+                    <Card/>
                 </div>
             </div>
         </>

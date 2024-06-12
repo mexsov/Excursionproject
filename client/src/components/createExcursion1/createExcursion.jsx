@@ -1,6 +1,6 @@
-import '../../../css/Modal.css';
+// import '../../../css/Modal.css';
 import { BsFillTrashFill, BsFillPencilFill, BsFillEyeFill } from "react-icons/bs";
-import { AuthContext } from '../../../../utils/AuthContext';
+import { AuthContext } from '../utils/AuthContext';
 import { useCallback, useContext, useMemo } from 'react';
 import { usecreateExcursion } from '../hooks/usecreateExcursion';
 
@@ -99,7 +99,7 @@ export const createExcursion = ({ createExcursion, isAdminOrOwner }) => {
 
                     <>
                         <BsFillPencilFill onClick={() => OpenUpdateForm(task)} />
-                        <BsFillTrashFill className="delete-btn" onClick={RemoveTask} />
+                        <BsFillTrashFill className="delete-btn" onClick={RemovecreateExcursion} />
                     </>
                     :
                     (user.username === worker_username ?

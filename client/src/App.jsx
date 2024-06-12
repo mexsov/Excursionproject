@@ -9,6 +9,7 @@ import ToursPage from './components/ToursPage';
 import ParticipantsPage from './components/ParticipantsPage';
 
 
+
 function App() {
   
   // const { user: authUser, logoutUser } = useContext(AuthContext); //kai bus Back'as
@@ -21,7 +22,7 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginForm />} />
-
+       
         <Route path="/signup" element={<RegisterForm />} />
         <Route path="/tourspage" element={<ToursPage />} />
         <Route path="/ParticipantsPage" element={<ParticipantsPage />} />
