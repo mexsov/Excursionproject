@@ -1,7 +1,6 @@
 import { checkSchema } from 'express-validator';
-import { TODO, INPROGRESS, DONE } from '../cfg/Task_Status.mjs';
 
-export const createcreateExcursionValidationSchema = checkSchema({
+export const createExcursionValidationSchema = checkSchema({
     name: {
         notEmpty:{
             errorMessage: "Name cannot be empty"

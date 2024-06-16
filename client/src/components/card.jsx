@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Card.css";
+import "./css/card.css";
 
 export const Card = ({
   imgSrc,
