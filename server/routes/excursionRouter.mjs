@@ -5,12 +5,12 @@ import AuthMiddleware from '../middleware/authMiddleware.mjs';
 
 import excursionController from '../controllers/excursionsController.mjs';
 
-import { createExcursionValidationSchema } from '../validators/ExcursionValidator.mjs';
+import { createExcursionValidationSchema } from '../validators/excursionValidator.mjs';
 
 // dotenv.config();
 
 console.log(excursionController.createExcursion); // Should log a function
-// console.log(createcreateExcursionValidationSchema); // Should log a validation schema or function
+
 
 const router = express.Router();
 
