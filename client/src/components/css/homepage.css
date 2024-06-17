@@ -1,5 +1,10 @@
+
+
 .container {
     display: grid;
+    background-color: slateblue;
+background: url(../../assets/city.jpg) no-repeat;
+background-size: cover;
   }
   
   
@@ -7,7 +12,7 @@
   .content {
     padding: 80px 100px;
     z-index: 1;
-    width: 80%;
+    /* width: 80%; */
   }
   
   
@@ -89,5 +94,16 @@
       padding: 10vh 5vh;
     }
   }
-
-  
+.main_page_card_container{
+  display: grid;
+}
+  .container_card_a{
+    width: 25rem;
+    grid-column: 1  / span 3 ;
+    
+  }
+  .container_card_b{
+    width: 20rem;
+    grid-column: 3  / span 5 ;
+    
+  }
