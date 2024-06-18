@@ -93,19 +93,19 @@
 // }
 
 import { BsFillTrashFill, BsFillPencilFill, BsFillEyeFill } from "react-icons/bs";
-import { AuthContext } from '../utils/AuthContext';
-import { useCallback, useContext } from 'react';
-import { useExcursion } from '../hooks/useExcursion';
+// import { AuthContext } from '../utils/AuthContext';
+import { useCallback } from 'react';
+import { useExcursion } from './hook/useExcursion';
 
-export const Excursion = ({ excursion }) => {
-    const { name, image_data, duration_minutes, rating, price, status } = excursion;
+export const Excursion = ( excursion ) => {
+    const { id, name,  duration_minutes, rating, price } = excursion;
 
-    const { user } = useContext(AuthContext);
+    // const { user } = useContext(AuthContext);
 
     const { FetchExcursions, OpenUpdateForm, OpenUpdateStatusForm, OpenViewForm, DeleteExcursion } = useExcursion();
 
-    const cssStatus = status?.replace(/\s/g, '') || '';
-    const displayStatus = status ? status.split(' ').map(value => value.charAt(0).toUpperCase() + value.slice(1)).join(" ") : '';
+    // const cssStatus = status?.replace(/\s/g, '') || '';
+    // const displayStatus = status ? status.split(' ').map(value => value.charAt(0).toUpperCase() + value.slice(1)).join(" ") : '';
 
     const RemoveExcursion = useCallback(async () => {
         if (!window.confirm("Are you sure you want to delete this excursion?")) return;
@@ -129,25 +129,23 @@ export const Excursion = ({ excursion }) => {
 
     return (
         <tr>
-            
+             {/* ID */}
+        <td title={id}>{id}</td>
             {/* Name */}
             <td title={name}>
                 {name.length > 10 ? `${name.substring(0, 10)} ...` : name}
             </td>
             {/* Image Data */}
-            <td>
+            {/* <td>
                 {image_data && <img src={image_data} alt={name} title={name} />}
-            </td>
+            </td> */}
             {/* Duration */}
             <td title={`${duration_minutes} minutes`}>{duration_minutes} min</td>
             {/* Rating */}
             <td title={`Rating: ${rating}`}>{rating}</td>
             {/* Price */}
             <td title={`Price: $${price}`}>${price}</td>
-            {/* Status */}
-            <td title={displayStatus}>
-                <span className={`label label-${cssStatus}`}>{displayStatus}</span>
-            </td>
+                    
             {/* Actions */}
             <td title="actions">
                 <span className="actions">

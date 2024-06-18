@@ -1,15 +1,16 @@
 import { AuthContext } from "./utils/AuthContext";
 import { useContext, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./css/homepage.css";
 import img1 from "../assets/visiter-vilnius-incontournables.jpg";
 import img2 from "../assets/solotravel.jpg";
 import img3 from "../assets/grouptravel.jpg";
 
 import { Card } from "./card";
+import { Excursion } from "./createExcursion/excursion";
 
 export const Home = () => {
-  const { user } = useContext(AuthContext);
+  // const { user } = useContext(AuthContext);
 
   return (
     <>
@@ -51,6 +52,7 @@ export const Home = () => {
             
             
           </div>
+          <Excursion/>
           <Card />
         </div>
       </div>

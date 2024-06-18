@@ -6,7 +6,7 @@ const excursionModel = {
 
     createExcursion: async(excursion) => {
       try{
-        const response = await apiClient.post(`/create_excursions/` excursion);
+        const response = await apiClient.post(`/create_excursions/`, excursion);
         return response;
       }
       catch(error){
@@ -23,16 +23,16 @@ const excursionModel = {
         return error.response;
       }
     },
-    updateTaskStatus: async(excursion) => {
-      try{
-        const response = await apiClient.put(`/tasks/status`, task);
-        return response;
-      }
-      catch(error){
-        console.log(error);
-        return error.response;
-      }
-    },
+    // updateTaskStatus: async(excursion) => {
+    //   try{
+    //     const response = await apiClient.put(`/tasks/status`, task);
+    //     return response;
+    //   }
+    //   catch(error){
+    //     console.log(error);
+    //     return error.response;
+    //   }
+    // },
 
 
 

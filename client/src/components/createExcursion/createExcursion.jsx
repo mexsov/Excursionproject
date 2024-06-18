@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import "../../../css/Modal.css";
-import { usecreateExcursion } from "../hooks/createcreateExcursion";
+import { useExcursion } from "../hooks/useExcursion";
 
-export const CreateTask = () => {
+export const CreateExcursion = () => {
 
     const {
         register,
@@ -11,13 +11,13 @@ export const CreateTask = () => {
         setError,
     } = useForm();
 
-    const { CloseCreateForm, CreatecreateExcursion, FetchcreateExcursion } = usecreateExcursion();
+    const { CloseForm, createExcursion, FetchExcursion } = useExcursion();
 
     const onFormSubmit = async (data) => {
-        const [status, response] = await CreatecreateExcursion(data);
+        const [status, response] = await createExcursion(data);
         if (status === 201) {
-            FetchcreateExcursion();
-            CloseCreateForm();
+            FetchExcursion();
+            CloseForm();
         }
         else if (status === 400) {
             const errors = response.errors;
@@ -38,7 +38,7 @@ export const CreateTask = () => {
 
     return (
         <div className="modal-container" onClick={(e) => {
-            if (e.target.className === "modal-container") CloseCreateForm();
+            if (e.target.className === "modal-container") CloseForm();
         }}>
             <div className="modal">
                 <form onSubmit={handleSubmit(onFormSubmit)}>
